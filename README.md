@@ -2,6 +2,14 @@
 
 A quick & dirty example for a ESP32 connecting to Twitch-Chat via IRC Client and setting LED Color for a WS2812b LED Stripe. 
 
+I would not recommend this approach for production use. It's really better to use a de-centralized approach: 
+
+- use a MQTT Server, e.g. Mosquitto as a central message broker
+- use e.g. PubSubClient library to connect the ESP32 to MQTT
+- use whatever you prefere to push Twitch-Messages to MQTT, e.g.:
+   - Node-Red (nodejs based 'graphical' automation-system with a huge community and plugins, ready to use twitch-plugin exists)
+   - write your own Twitch-to-MQTT Integration, e.g. with tmi.js, twitchlib or whatever Language you prefer :) 
+
 ## Setup
 
 1. Create a `credentials.h` file in root folder:
@@ -31,8 +39,7 @@ Type `!led` followed by a color into the twitch chat to change the LED Stripes c
 
 The commands are parsed in the `callback` function (~lines 29++), the color is being set at the begin of the `loop` function.
 
-
-# Used Libraries / Tools
+## Used Libraries / Tools
 
 - PlatformIO http://platformio.org/
 - ArduinoIRC: https://github.com/fredimachado/ArduinoIRC
