@@ -6,7 +6,7 @@ I would not recommend this approach for production use. It's really better to us
 
 - use a MQTT Server, e.g. Mosquitto as a central message broker
 - use e.g. PubSubClient library to connect the ESP32 to MQTT
-- use whatever you prefere to push Twitch-Messages to MQTT, e.g.:
+- use whatever you prefer to push Twitch-Messages to MQTT, e.g.:
    - Node-Red (nodejs based 'graphical' automation-system with a huge community and plugins, ready to use twitch-plugin exists)
    - write your own Twitch-to-MQTT Integration, e.g. with tmi.js, twitchlib or whatever Language you prefer :) 
 
