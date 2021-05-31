@@ -10,7 +10,6 @@
 #define IRC_CHANNEL "#sascha_lb"
 String IRC_NICKNAME;
 
-
 #define DATA_PIN 16
 #define NUM_LEDS 5
 
@@ -50,9 +49,10 @@ void debugSentCallback(String data) { Serial.println(data); }
 void setup() {
   Serial.begin(115200);
 
-  Serial.println("Connecting to Wifi");
-
+  // generate random string and prepend 'justinfan' for anonymous twitch login
   IRC_NICKNAME = "justinfan" + String(random(1000000, 9999999));
+
+  Serial.println("Connecting to Wifi");
 
   WiFi.mode(WIFI_STA);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
@@ -68,8 +68,6 @@ void setup() {
   client.setSentCallback(debugSentCallback);
 
   FastLED.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);
-
-  pinMode(2, OUTPUT);
 }
 
 void loop() {
