@@ -2,7 +2,7 @@
 
 A quick & dirty example for a ESP32 connecting to Twitch-Chat via IRC Client and setting LED Color for a WS2812b LED Stripe. 
 
-## Usage
+## Setup
 
 1. Create a `credentials.h` file in root folder:
    - define `WIFI_SSID` and `WIFI_PASSWORD` with your WIFI Credentials
@@ -22,7 +22,17 @@ String IRC_NICKNAME; //will be generated
    - Find your board at https://platformio.org/boards
 
 
-### Used Libraries / Tools
+## Usage
+
+Type `!led` followed by a color into the twitch chat to change the LED Stripes color:
+- `!led rot` changes color to red
+- `!led grün` changes color to green
+- `!led blau` changes color to blue
+
+The commands are parsed in the `callback` function (~lines 29++), the color is being set at the begin of the `loop` function.
+
+
+# Used Libraries / Tools
 
 - PlatformIO http://platformio.org/
 - ArduinoIRC: https://github.com/fredimachado/ArduinoIRC
