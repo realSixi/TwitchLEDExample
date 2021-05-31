@@ -14,6 +14,7 @@ I would not recommend this approach for production use. It's really better to us
 
 1. Create a `credentials.h` file in root folder:
    - define `WIFI_SSID` and `WIFI_PASSWORD` with your WIFI Credentials
+   - see `credentials_example.h` for an example :)
 2. see `src/main.cpp` to adjust `DATA_PIN` for the LEDs and `IRC_CHANNEL`:
 ```
 #define IRC_SERVER "irc.chat.twitch.tv"
